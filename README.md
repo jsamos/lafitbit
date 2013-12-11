@@ -61,7 +61,7 @@ class FitbitController extends Controller {
         $auth = Fitbit::authentication();
         $oauth_token = Input::get('oauth_token');
         $oauth_verifier = Input::get('oauth_verifier');
-        $auth->authenticateUser($_GET['oauth_token'], $_GET['oauth_verifier']);
+        $auth->authenticateUser($oauth_token, $oauth_verifier);
 
         if ($auth->isAuthorized()) {
             $profile = Fitbit::user()->getProfile();
