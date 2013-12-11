@@ -1,7 +1,7 @@
 <?php namespace Jsamos\Lafitbit;
 
 use Illuminate\Support\ServiceProvider;
-use Fitbit\Api;
+use Fitbit\ApiGatewayFactory;
 
 class LafitbitServiceProvider extends ServiceProvider {
 
@@ -33,11 +33,13 @@ class LafitbitServiceProvider extends ServiceProvider {
 	{
         $this->app['lafitbit'] = $this->app->share(function($app)
         {
-
         	$config = $app['config']->get('lafitbit::config');
         	extract($config);
-        	return new Api($consumer_key, $consumer_secret, $callbackUrl, $responseFormat, $storageAdapter);
-
+			$factory = new ApiGatewayFactory;
+			$factory->setCallbackURL($callbackUrl);
+			$factory->setCredentials($consumer_key, $consumer_secret);
+			$factory->setStorageAdapter(new $storageAdapter);
+			return new GatewayManager($factory);
         });
 	}
 
