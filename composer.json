@@ -1,6 +1,7 @@
 {
     "name": "jsamos/lafitbit",
-    "description": "",
+    "description": "Laravel 4 Wrapper for fitbitphp package",
+    "keywords": ["laravel", "fitbit"],
     "authors": [
         {
             "name": "Juni Samos",
