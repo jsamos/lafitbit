@@ -32,6 +32,7 @@ add service provider and facade to app/config/app.php
     'Fitbit'		  => 'Jsamos\Lafitbit\Facades\Fitbit',
     ...
 );
+```
 
 Usage
 =====
