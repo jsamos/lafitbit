@@ -1,6 +1,7 @@
 <?php namespace Jsamos\Lafitbit;
 
 use Illuminate\Support\ServiceProvider;
+use Fitbit\Api;
 
 class LafitbitServiceProvider extends ServiceProvider {
 
@@ -34,7 +35,8 @@ class LafitbitServiceProvider extends ServiceProvider {
         {
 
         	$config = $app['config']->get('lafitbit::config');
-        	var_dump($config);
+        	extract($config);
+        	return new Api($consumer_key, $consumer_secret, $callbackUrl, $responseFormat, $storageAdapter);
 
         });
 	}
