@@ -19,5 +19,11 @@
             "Jsamos\\Lafitbit": "src/"
         }
     },
-    "minimum-stability": "dev"
+    "minimum-stability": "dev",
+    "repositories" : [
+        {
+            "type": "vcs",
+            "url": "https://github.com/jsamos/fitbitphp.git"
+        }
+    ],
 }
