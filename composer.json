@@ -12,12 +12,18 @@
     "require": {
         "php": ">=5.3.0",
         "illuminate/support": "4.1.x",
-        "jsamos/fitbitphp": "dev-master"
+        "popthestack/fitbit": "dev-master"
     },
     "autoload": {
         "psr-0": {
             "Jsamos\\Lafitbit": "src/"
         }
     },
-    "minimum-stability": "dev"
+    "minimum-stability": "dev",
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/jsamos/fitbitphp.git"
+        }
+    ]
 }
