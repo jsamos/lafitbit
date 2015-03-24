@@ -11,7 +11,7 @@ composer.json
 ```
 {
     "require": {
-        "slender/auth": "dev-master"
+        "jsamos/lafitbit": "dev-master"
     }
 }
 ```
